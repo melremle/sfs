@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    ErrorDocument 400 /errors/400.php
+    ErrorDocument 404 /errors/404.php
+    ErrorDocument 403 /errors/403.php
+    ErrorDocument 500 /errors/500.php
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+</IfModule>
+
+Options All -Indexes
